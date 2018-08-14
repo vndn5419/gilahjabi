@@ -1,4 +1,4 @@
-package global.sesoc.cryptokick;
+package global.sesoc.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
