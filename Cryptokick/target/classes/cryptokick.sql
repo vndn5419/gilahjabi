@@ -37,7 +37,7 @@ CREATE TABLE cart
 CREATE TABLE company
 (
 	-- 회사아이디
-	co_id varchar2(30) NOT NULL UNIQUE,
+	co_id varchar2(30) NOT NULL,
 	-- 회사명
 	co_name varchar2(50) NOT NULL,
 	-- 회사비밀번호
@@ -59,7 +59,7 @@ CREATE TABLE company
 CREATE TABLE image
 (
 	-- 이미지 번호
-	image_num number NOT NULL UNIQUE,
+	image_num number NOT NULL,
 	-- 이미지 경로
 	image_path varchar2(1000) NOT NULL,
 	-- 상품 번호
@@ -71,7 +71,7 @@ CREATE TABLE image
 CREATE TABLE product
 (
 	-- 상품 번호
-	product_num number NOT NULL UNIQUE,
+	product_num number NOT NULL,
 	-- 상품 이름
 	product_name varchar2(100) NOT NULL,
 	-- 상품 게시글 제목
@@ -104,7 +104,7 @@ CREATE TABLE product
 CREATE TABLE reply
 (
 	-- 리플 번호
-	reply_num number NOT NULL UNIQUE,
+	reply_num number NOT NULL,
 	-- 리플 내용
 	reply_content varchar2(1000) NOT NULL,
 	-- member 테이블의 pk 값, 회원아이디
@@ -119,7 +119,7 @@ CREATE TABLE reply
 CREATE TABLE rereply
 (
 	-- 리리플번호
-	rereply_num number NOT NULL UNIQUE,
+	rereply_num number NOT NULL,
 	-- 리리플내용
 	rereply_content varchar2(1000) NOT NULL,
 	-- 리플 번호
@@ -135,7 +135,7 @@ CREATE TABLE rereply
 CREATE TABLE sale
 (
 	-- 판매 정보
-	sale_num number NOT NULL UNIQUE,
+	sale_num number NOT NULL,
 	-- 판매 가격 정보
 	sale_priceinfo number NOT NULL,
 	-- 판매 상품 개수
@@ -152,7 +152,7 @@ CREATE TABLE sale
 CREATE TABLE viewer
 (
 	-- 접속 번호
-	viewer_num number NOT NULL UNIQUE,
+	viewer_num number NOT NULL,
 	-- 접속 국가 정보
 	viewer_countryinfo varchar2(100),
 	-- 접속 도시 정보
@@ -171,7 +171,7 @@ CREATE TABLE viewer
 CREATE TABLE webadmin
 (
 	-- 관리자 아이디
-	admin_id varchar2(30) NOT NULL UNIQUE,
+	admin_id varchar2(30) NOT NULL,
 	-- 관리자 비밀번호
 	admin_pwd varchar2(30) NOT NULL,
 	-- 관리자 전화번호
@@ -188,7 +188,7 @@ CREATE TABLE webmember
 (
 	-- member 테이블의 pk 값, 회원아이디
 	-- 
-	userid varchar2(30) NOT NULL UNIQUE,
+	userid varchar2(30) NOT NULL,
 	-- 회원 이름
 	username varchar2(30) NOT NULL,
 	-- 회원 비밀번호
