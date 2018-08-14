@@ -11,7 +11,7 @@ public class MemberController {
 
 	@RequestMapping(value="/signIn", method=RequestMethod.GET)
 	public String singIn() {
-		
+		 
 		Ipinfomation test = new Ipinfomation();
 		
 		test.login();
