@@ -8,6 +8,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import global.sesoc.vo.Viewer;
+
 public class Ipinfomation {
 	 
 	 
@@ -34,16 +36,17 @@ public class Ipinfomation {
 	            String city = null;
 	            String ip = null;
 	            int count =0;
+	            Viewer viewer = new Viewer();
 	            while((str=br.readLine()) != null){
 	                 
 	            	if(count == 1) {
-	            		country = str;
+	            		viewer.setViewer_countryinfo(str); 
 	            	}
 	            	if(count == 4) {
-	            		city = str;
+	            		viewer.setViewer_cityinfo(str);
 	            	}
 	            	if(count == 13) {
-	            		ip = str;
+	            		viewer.setViewer_ipinfo(str);
 	            	}
 	            	
 	            	
