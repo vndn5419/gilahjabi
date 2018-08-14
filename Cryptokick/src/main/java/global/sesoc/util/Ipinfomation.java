@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class test {
+public class Ipinfomation {
 	 
 	 
 	    public String login() {
@@ -30,14 +30,33 @@ public class test {
 	            BufferedReader br = new BufferedReader(isr);
 	             
 	            String str ;
+	            String country = null;
+	            String city = null;
+	            String ip = null;
+	            int count =0;
 	            while((str=br.readLine()) != null){
 	                 
+	            	if(count == 1) {
+	            		country = str;
+	            	}
+	            	if(count == 4) {
+	            		city = str;
+	            	}
+	            	if(count == 13) {
+	            		ip = str;
+	            	}
+	            	
+	            	
 	                sbuf.append(str + "\r\n") ;
-	                 
+	                count++; 
 	            }
+	            
 	             
 	            // 콘솔에 출력하기
-	            System.out.println(sbuf.toString()) ;
+	            System.out.println(country) ;
+	            System.out.println(city);
+	            System.out.println(ip);
+	            
 	             
 	        } catch (MalformedURLException e) {
 	            e.printStackTrace();

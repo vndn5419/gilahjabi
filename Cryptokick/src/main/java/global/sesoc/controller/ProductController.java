@@ -26,6 +26,7 @@ public class ProductController {
 		    		
 		    if(nonce % 10000==0 ) {
 		    		System.out.println("시도 : " + nonce);
+		    		
 		    }
 		    
 		     if(CryptoCurrency.getHash(nonce + "").substring(0, 6).equals("000000")) {
