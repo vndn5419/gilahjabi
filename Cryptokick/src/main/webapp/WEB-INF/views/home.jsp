@@ -92,7 +92,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/"><img src="assets/img/logo.png" alt=""></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -103,7 +103,7 @@
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-                            <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Home <b class="caret"></b></a>
+                            <a href="${pageContext.request.contextPath}/" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Home <b class="caret"></b></a>
                             <ul class="dropdown-menu navbar-nav">
                                 <li>
                                     <a href="index-2.html">Home Style 2</a>
@@ -133,7 +133,7 @@
                                                 <h5>Home pages</h5>
                                                 <ul>
                                                     <li>
-                                                        <a href="index.html">Home Style 1</a>
+                                                        <a href="${pageContext.request.contextPath}/">Home Style 1</a>
                                                     </li>
                                                     <li>
                                                         <a href="index-2.html">Home Style 2</a>
@@ -215,7 +215,7 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property.html">Ralph Waldo villa</a></cite>
+<%--                             <blockquote><cite><a href="property.html">Ralph Waldo villa</a></cite>
                                 <p>You have just dined, and however scrupulously the slaughterhouse 
                                     is concealed in the graceful distance of miles, there is complicity.
                                 </p>
@@ -226,7 +226,7 @@
                                     <img src="assets/img/icon/shawer.png">(2)|
                                     <img src="assets/img/icon/cars.png">(1)  
                                 </div>
-                            </blockquote>
+                            </blockquote> --%>
                         </div>
                     </div> 
 
@@ -444,7 +444,7 @@
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
                                         <!-- /.feature title -->
-                                        <h2>GARO ESTATE </h2>
+                                        <h2> CRYPTO KICK </h2>
                                     </div>
                                 </div>
                             </div>
@@ -721,7 +721,7 @@
                                             <a href="single.html">
                                                 <img src="assets/img/demo/small-proerty-2.jpg">
                                             </a>
-                                            <span class="blg-date">12-12-2016</span>
+                                            <span class="blg-date">12-12-2016</span>	
 
                                         </div>
                                         <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
