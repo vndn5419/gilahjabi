@@ -54,6 +54,47 @@
 			   }
 	  });
 }
+	
+	
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '360',
+    width: '640',
+    videoId: 'M7lc1UVf-VE',
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    setTimeout(stopVideo, 6000);
+    done = true;
+  }
+}
+function stopVideo() {
+  player.stopVideo();
+}	
 </script>
     <body>
 
@@ -236,37 +277,18 @@
                     <div class="col-md-8 single-property-content prp-style-1 ">
                         <div class="row">
                             <div class="light-slide-item">            
-                                <div class="clearfix">
-                                    <div class="favorite-and-print">
-                                        <a class="add-to-fav" href="#login-modal" data-toggle="modal">
-                                            <i class="fa fa-star-o"></i>
-                                        </a>
-                                        <a class="printer-icon " href="javascript:window.print()">
-                                            <i class="fa fa-print"></i> 
-                                        </a>
-                                    </div> 
-
-                                    <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                                        <li data-thumb="assets/img/property-1/property1.jpg"> 
-                                            <img src="assets/img/property-1/property1.jpg" />
-                                        </li>
-                                        <li data-thumb="assets/img/property-1/property2.jpg"> 
-                                            <img src="assets/img/property-1/property3.jpg" />
-                                        </li>
-                                        <li data-thumb="assets/img/property-1/property3.jpg"> 
-                                            <img src="assets/img/property-1/property3.jpg" />
-                                        </li>
-                                        <li data-thumb="assets/img/property-1/property4.jpg"> 
-                                            <img src="assets/img/property-1/property4.jpg" />
-                                        </li>                                         
-                                    </ul>
+                                 <div class="clearfix">
+                                 
+									<!-- 유투브 동영상 넣기 test -->
+									<div id="player" style="width: 720px; height: 405px; margin-bottom: 50px;"></div>
+                                
                                 </div>
                             </div>
                         </div>
 
                         <div class="single-property-wrapper">
                             <div class="single-property-header">                                          
-                                <h1 class="property-title pull-left">Villa in Coral Gables</h1>
+                                <h1 class="property-title pull-left">테스트 상품 테스트 상품</h1>
                                 <span class="property-price pull-right">$825,000</span>
                             </div>
 
@@ -347,7 +369,7 @@
                             <!-- .property-meta -->
 
                             <div class="section">
-                                <h4 class="s-property-title">Description</h4>
+                                <h4 class="s-property-title">상품 설명</h4>
                                 <div class="s-property-content">
                                     <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies                                </p>
                                 </div>
@@ -356,7 +378,7 @@
 
                             <div class="section additional-details">
 
-                                <h4 class="s-property-title">Additional Details</h4>
+                                <h4 class="s-property-title">상품 상세정보</h4>
 
                                 <ul class="additional-details-list clearfix">
                                     <li>
@@ -408,11 +430,22 @@
                             <!-- End features area  -->
 
                             <div class="section property-video"> 
-                                <h4 class="s-property-title">Property Video</h4> 
+                                <h4 class="s-property-title">상품 상세이미지</h4> 
                                 <div class="video-thumb">
-                                    <a class="video-popup" href="yout" title="Virtual Tour">
-                                        <img src="assets/img/property-video.jpg" class="img-responsive wp-post-image" alt="Exterior">            
-                                    </a>
+                                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                                        <li data-thumb="assets/img/property-1/property1.jpg"> 
+                                            <img src="assets/img/property-1/property1.jpg" />
+                                        </li>
+                                        <li data-thumb="assets/img/property-1/property2.jpg"> 
+                                            <img src="assets/img/property-1/property3.jpg" />
+                                        </li>
+                                        <li data-thumb="assets/img/property-1/property3.jpg"> 
+                                            <img src="assets/img/property-1/property3.jpg" />
+                                        </li>
+                                        <li data-thumb="assets/img/property-1/property4.jpg"> 
+                                            <img src="assets/img/property-1/property4.jpg" />
+                                        </li>                                         
+                                  </ul>   
                                 </div>
                             </div>
                             <!-- End video area  -->
