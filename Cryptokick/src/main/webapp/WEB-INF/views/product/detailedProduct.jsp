@@ -2,57 +2,55 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GARO ESTATE | Property  page</title>
-        <meta name="description" content="company is a real-estate template">
-        <meta name="author" content="Kimarotec">
-        <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-        <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/fontello.css">
-        <link href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
-        <link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet">
-        <link href="assets/css/animate.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" href="assets/css/bootstrap-select.min.css"> 
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/icheck.min_all.css">
-        <link rel="stylesheet" href="assets/css/price-range.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.css">  
-        <link rel="stylesheet" href="assets/css/owl.theme.css">
-        <link rel="stylesheet" href="assets/css/owl.transitions.css">
-        <link rel="stylesheet" href="assets/css/lightslider.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
-    </head>
-    	<script type="text/javascript" src="resources/jquery-3.3.1.min.js"></script>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>GARO ESTATE | Property  page</title>
+	<meta name="description" content="company is a real-estate template">
+	<meta name="author" content="Kimarotec">
+	<meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+	
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/fontello.css">
+	<link href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
+	<link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="assets/css/bootstrap-select.min.css"> 
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/icheck.min_all.css">
+	<link rel="stylesheet" href="assets/css/price-range.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">  
+	<link rel="stylesheet" href="assets/css/owl.theme.css">
+	<link rel="stylesheet" href="assets/css/owl.transitions.css">
+	<link rel="stylesheet" href="assets/css/lightslider.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<script type="text/javascript" src="resources/jquery-3.3.1.min.js"></script>
 <script>
-	$(function(){
-		getHash();
-	});
-	function getHash(){
 
-		 $.ajax({
-			   method : 'get',
-			   url : 'getHash',
-			   success : function(resp){
-				   alert(resp);
-			   }
-	  });
+/* $(function(){
+	getHash();
+});
+ */
+ 
+function getHash(){
+	$.ajax({
+		method : 'get',
+		url : 'getHash',
+		success : function(resp){
+			alert(resp);
+		}
+	});
 }
 	
 	
@@ -65,39 +63,198 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 var player;
+
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '360',
     width: '640',
-    videoId: 'M7lc1UVf-VE',
+    startSeconds : '0',
+    videoId: 'ZRlmJxh1frs',
+    host: 'https://www.youtube.com',
     events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+		'onStateChange': onPlayerStateChange
     }
   });
 }
 
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-  event.target.playVideo();
-}
-
 // 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
 var done = false;
+var start = false;
 function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
-    done = true;
-  }
+	if(player.getPlayerState() == 1 && !start){
+		alert("재생시작");
+		start = true;
+		getHash(); //재생 시작시 getHash함수 시작
+	}
+  	if(player.getPlayerState() == 2){
+		alert("동영상 일시정지됨(듀레이션) : "+player.getDuration());
+		alert("동영상 정지됨 : "+player.getCurrentTime());
+  	}
+  	if(player.getPlayerState() == 0){
+		alert("동영상 정지됨(듀레이션) : "+player.getDuration());
+		alert("동영상 정지됨 : "+player.getCurrentTime());
+  	}
 }
 function stopVideo() {
   player.stopVideo();
 }	
 </script>
-    <body>
 
+<style type="text/css">
+@import url("https://fonts.googleapis.com/css?family=Ek+Mukta:400,300,500,700,800");
+
+.coin {
+  font-family: 'Ek Mukta', sans-serif;
+  margin: -50px 0 0 -50px;
+  width: 100px;
+  height: 100px;
+  -ms-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 50%;	
+  left: 50%;
+  animation: coin 2s linear infinite;
+}
+
+.coin .front {
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.coin .back {
+  width: 100%;
+  height: 100%;
+  background: #f7941e;
+  border-radius: 50%;
+  transform: rotateY(180deg) translateZ(10px);
+  -webkit-transform: rotateY(180deg) translateZ(10px);
+  -ms-transform: rotateY(180deg) translateZ(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.coin .front_b {
+  width: 100%;
+  height: 100%;
+  background: #f7941e;
+  border-radius: 50%;
+  transform: translateZ(-1px);
+  -webkit-transform: translateZ(-1px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.coin .back_b {
+  width: 100%;
+  height: 100%;
+  background: #f7941e;
+  border-radius: 50%;
+  transform: translateZ(-9px);
+  -webkit-transform: translateZ(-9px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.coin:before {
+  content: "";
+  margin-left: -5px;
+  width: 10px;
+  height: 100%;
+  background: #f7941e;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: rotateY(-90deg);
+  -webkit-transform-origin: 100% 50%;
+  transform: rotateY(-90deg);
+  transform-origin: 100% 50%;
+}
+
+.coin .front_b:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 10px solid #fbb041;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.coin .front_b:after {
+  content: "$";
+  padding: 12px 0 0 0;
+  width: 100%;
+  height: 100%;
+  font-size: 5em;
+  font-weight: bold;
+  color: #fbb041;
+  line-height: 1;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;  
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.coin .back:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 10px solid #fbb041;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+}
+
+.coin .back:after {
+  content: "100";
+  padding: 27px 0 0 0;
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  font-weight: bold;
+  color: #fbb041;
+  line-height: 1;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -4;
+}
+
+@keyframes coin {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+</style>
+
+    <body>
         <div id="preloader">
             <div id="status">&nbsp;</div>
         </div>
@@ -261,7 +418,7 @@ function stopVideo() {
             <div class="container">
                 <div class="row">
                     <div class="page-head-content">
-                        <h1 class="page-title" style="color: black;">Super nice villa </h1>               
+                        <h1 class="page-title" style="color: black;">DP LUMI Next Level LED Lighting for Video & Still Production</h1>               
                     </div>
                 </div>
             </div>
@@ -269,6 +426,17 @@ function stopVideo() {
         <!-- End page header -->
 
         <!-- property area -->
+        
+        <!-- 코인 -->	
+		<div class="coin">
+  		<div class="front"></div>
+  		<div class="front_b"></div>
+ 		<div class="back"></div>
+  		<div class="back_b"></div>
+		</div>
+		<!-- 코인 -->
+        
+        
         <div class="content-area single-property" style="background-color: #FCFCFC;">&nbsp;
             <div class="container">   
 
@@ -288,8 +456,9 @@ function stopVideo() {
 
                         <div class="single-property-wrapper">
                             <div class="single-property-header">                                          
-                                <h1 class="property-title pull-left">테스트 상품 테스트 상품</h1>
-                                <span class="property-price pull-right">$825,000</span>
+                                <h1 class="property-title pull-left">DP LUMI Next Level LED Lighting for Video & Still Production</h1>
+                                <span class="property-price pull-right" id="goalprice"> $825,000</span>
+                                <span class="property-price pull-right">Goal</span>
                             </div>
 
                             <div class="property-meta entry-meta clearfix ">   
@@ -433,17 +602,17 @@ function stopVideo() {
                                 <h4 class="s-property-title">상품 상세이미지</h4> 
                                 <div class="video-thumb">
                                  <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                                        <li data-thumb="assets/img/property-1/property1.jpg"> 
-                                            <img src="assets/img/property-1/property1.jpg" />
+                                        <li data-thumb="https://ksr-ugc.imgix.net/assets/018/503/138/8c04879ee015b028358b6a0c383a8aab_original.png?w=680&fit=max&v=1506524062&auto=format&lossless=true&s=b4d74d287d0a4abcd6821c86a5275ccc"> 
+                                            <img src="https://ksr-ugc.imgix.net/assets/018/503/138/8c04879ee015b028358b6a0c383a8aab_original.png?w=680&fit=max&v=1506524062&auto=format&lossless=true&s=b4d74d287d0a4abcd6821c86a5275ccc" />
                                         </li>
-                                        <li data-thumb="assets/img/property-1/property2.jpg"> 
-                                            <img src="assets/img/property-1/property3.jpg" />
+                                        <li data-thumb="https://ksr-ugc.imgix.net/assets/018/495/873/d7538f5c95bec5c8785b4e25543d30dd_original.png?w=680&fit=max&v=1506478022&auto=format&lossless=true&s=7a45979310c89e5ec06f4b2080c0e275"> 
+                                            <img src="https://ksr-ugc.imgix.net/assets/018/495/873/d7538f5c95bec5c8785b4e25543d30dd_original.png?w=680&fit=max&v=1506478022&auto=format&lossless=true&s=7a45979310c89e5ec06f4b2080c0e275" />
                                         </li>
-                                        <li data-thumb="assets/img/property-1/property3.jpg"> 
-                                            <img src="assets/img/property-1/property3.jpg" />
+                                        <li data-thumb="https://ksr-ugc.imgix.net/assets/018/917/924/3cd4d62acbe1228535a6c2652589a231_original.gif?w=680&fit=max&v=1508964259&auto=format&gif-q=50&q=92&s=4e348e947a1fa31f9f7c5ed07389ed59"> 
+                                            <img src="https://ksr-ugc.imgix.net/assets/018/917/924/3cd4d62acbe1228535a6c2652589a231_original.gif?w=680&fit=max&v=1508964259&auto=format&gif-q=50&q=92&s=4e348e947a1fa31f9f7c5ed07389ed59" />
                                         </li>
-                                        <li data-thumb="assets/img/property-1/property4.jpg"> 
-                                            <img src="assets/img/property-1/property4.jpg" />
+                                        <li data-thumb="https://ksr-ugc.imgix.net/assets/018/491/429/61daec7e84f26e2976a706d798ed7791_original.png?w=680&fit=max&v=1506456412&auto=format&lossless=true&s=92f9133ec4f8f020089dd8e59ee715ff"> 
+                                            <img src="https://ksr-ugc.imgix.net/assets/018/491/429/61daec7e84f26e2976a706d798ed7791_original.png?w=680&fit=max&v=1506456412&auto=format&lossless=true&s=92f9133ec4f8f020089dd8e59ee715ff" />
                                         </li>                                         
                                   </ul>   
                                 </div>
@@ -489,24 +658,6 @@ function stopVideo() {
                                                     <a href="">Nathan James</a>
                                                     <span>Real Estate Agent</span>        
                                                 </h3>
-                                                <div class="dealer-social-media">
-                                                    <a class="twitter" target="_blank" href="">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                    <a class="facebook" target="_blank" href="">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                    <a class="gplus" target="_blank" href="">
-                                                        <i class="fa fa-google-plus"></i>
-                                                    </a>
-                                                    <a class="linkedin" target="_blank" href="">
-                                                        <i class="fa fa-linkedin"></i>
-                                                    </a> 
-                                                    <a class="instagram" target="_blank" href="">
-                                                        <i class="fa fa-instagram"></i>
-                                                    </a>       
-                                                </div>
-
                                             </div>
                                         </div>
 

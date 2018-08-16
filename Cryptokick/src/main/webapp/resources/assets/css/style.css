@@ -1088,7 +1088,7 @@ font-weight: 500;
 page-header
 ======================================================*/
 .page-head{
-    color: #ffffff;
+    color: #fcfcfc;
     position: relative;
     min-height: 100px;
 }
