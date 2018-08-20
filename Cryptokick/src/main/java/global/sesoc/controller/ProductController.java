@@ -41,6 +41,11 @@ public class ProductController {
 
 		      nonce++;
 		    }
-		    
+	}
+	@RequestMapping(value="/AllProjects", method=RequestMethod.GET)
+	public String AllProjects() {
+		System.out.println("여기까지옴.");
+		
+		return "product/projects";
 	}
 }

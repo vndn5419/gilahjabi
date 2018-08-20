@@ -52,6 +52,7 @@ CREATE TABLE company
 	co_email varchar2(100) NOT NULL,
 	-- 회사 홈페이지
 	co_website varchar2(200) NOT NULL,
+	co_image varchar2(2000),
 	PRIMARY KEY (co_id)
 );
 
@@ -145,6 +146,7 @@ CREATE TABLE sale
 	-- member 테이블의 pk 값, 회원아이디
 	-- 
 	userid varchar2(30) NOT NULL UNIQUE,
+	sale_date date NOT NULL,
 	PRIMARY KEY (sale_num)
 );
 
@@ -164,6 +166,7 @@ CREATE TABLE viewer
 	userid varchar2(30) UNIQUE,
 	-- 상품 번호
 	product_num number NOT NULL UNIQUE,
+	viewer_date date NOT NULL,
 	PRIMARY KEY (viewer_num)
 );
 
@@ -206,6 +209,7 @@ CREATE TABLE webmember
 	email varchar2(100) NOT NULL,
 	-- 회원 관심분야
 	hobby varchar2(1000),
+	image varchar2(2000),
 	PRIMARY KEY (userid)
 );
 
