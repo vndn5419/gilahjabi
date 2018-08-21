@@ -10,13 +10,14 @@ public class Company {
 		private String co_ceo;
 		private String co_email;
 		private String co_website;
+		private String co_image;
 		
 		public Company() {
 			// TODO Auto-generated constructor stub
 		}
 
 		public Company(String co_id, String co_name, String co_pwd, String co_address, String co_phone, String co_ceo,
-				String co_email, String co_website) {
+				String co_email, String co_website, String co_image) {
 			super();
 			this.co_id = co_id;
 			this.co_name = co_name;
@@ -26,6 +27,7 @@ public class Company {
 			this.co_ceo = co_ceo;
 			this.co_email = co_email;
 			this.co_website = co_website;
+			this.co_image = co_image;
 		}
 
 		public String getCo_id() {
@@ -92,12 +94,19 @@ public class Company {
 			this.co_website = co_website;
 		}
 
+		public String getCo_image() {
+			return co_image;
+		}
+
+		public void setCo_image(String co_image) {
+			this.co_image = co_image;
+		}
+
 		@Override
 		public String toString() {
 			return "Company [co_id=" + co_id + ", co_name=" + co_name + ", co_pwd=" + co_pwd + ", co_address="
 					+ co_address + ", co_phone=" + co_phone + ", co_ceo=" + co_ceo + ", co_email=" + co_email
-					+ ", co_website=" + co_website + "]";
+					+ ", co_website=" + co_website + ", co_image=" + co_image + "]";
 		}
-		
 		
 }

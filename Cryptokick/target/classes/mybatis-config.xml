@@ -3,12 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!-- 	<typeAliases>
-		<typeAlias type="global.sesoc.vo.NoteUser" alias="NoteUser" />
-		<typeAlias type="global.sesoc.vo.DreamList" alias="DreamList" />
+ 	<typeAliases>
+		<typeAlias type="global.sesoc.vo.Product" alias="Product" />
 	</typeAliases>
 	<mappers>
-		<mapper resource="mappers/noteUserMapper.xml" />
-		<mapper resource="mappers/dreamListMapper.xml" />
-	</mappers> -->
+		<mapper resource="mappers/productMapper.xml" />
+	</mappers>
 </configuration>

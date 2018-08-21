@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- SQL -->
+<mapper namespace="global.sesoc.dao.ProductMapper">
+
+  <select id="selectAll" parameterType="Product" resultType="Product">
+  		select * 
+  		from 
+  		(select rownum rnum, product_num, product_name, product_title, product_content, product_nowfundprice, product_goalfundprice,
+  		product_startdate, To_char(product_goaldate, 'MM-dd') product_goaldate, product_hitcount, product_category, product_video, co_id, product_coverImage
+  		 from product 
+  		 order by product_startdate desc) 
+  		 where rnum between (#{product_num}+1) and (#{product_num}+9)
+  		<if test="product_category !=null"> 
+  		and product_category=#{product_category}
+  		</if>
+  		</select>
+  
+	
+</mapper>
+    

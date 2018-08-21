@@ -7,18 +7,20 @@ public class Sale {
 	private int sale_amount;
 	private int product_num;
 	private String userid;
+	private String sale_date;
 	
 	public Sale() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Sale(int sale_num, int sale_priceinfo, int sale_amount, int product_num, String userid) {
+	public Sale(int sale_num, int sale_priceinfo, int sale_amount, int product_num, String userid, String sale_date) {
 		super();
 		this.sale_num = sale_num;
 		this.sale_priceinfo = sale_priceinfo;
 		this.sale_amount = sale_amount;
 		this.product_num = product_num;
 		this.userid = userid;
+		this.sale_date = sale_date;
 	}
 
 	public int getSale_num() {
@@ -61,10 +63,18 @@ public class Sale {
 		this.userid = userid;
 	}
 
+	public String getSale_date() {
+		return sale_date;
+	}
+
+	public void setSale_date(String sale_date) {
+		this.sale_date = sale_date;
+	}
+
 	@Override
 	public String toString() {
 		return "Sale [sale_num=" + sale_num + ", sale_priceinfo=" + sale_priceinfo + ", sale_amount=" + sale_amount
-				+ ", product_num=" + product_num + ", userid=" + userid + "]";
+				+ ", product_num=" + product_num + ", userid=" + userid + ", sale_date=" + sale_date + "]";
 	}
 	
 	

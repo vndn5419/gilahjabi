@@ -13,17 +13,16 @@ public class Product {
 		private String product_category;
 		private String product_video;
 		private String co_id;
+		private String product_coverImage;
 		
 		public Product() {
 			// TODO Auto-generated constructor stub
 		}
-		
-		
 
 		public Product(int product_num, String product_name, String product_title, String product_content,
 				String product_nowfundprice, String product_goalfundprice, String product_startdate,
 				String product_goaldate, String product_hitcount, String product_category, String product_video,
-				String co_id) {
+				String co_id, String product_coverImage) {
 			super();
 			this.product_num = product_num;
 			this.product_name = product_name;
@@ -37,9 +36,8 @@ public class Product {
 			this.product_category = product_category;
 			this.product_video = product_video;
 			this.co_id = co_id;
+			this.product_coverImage = product_coverImage;
 		}
-
-
 
 		public int getProduct_num() {
 			return product_num;
@@ -137,7 +135,13 @@ public class Product {
 			this.co_id = co_id;
 		}
 
+		public String getProduct_coverImage() {
+			return product_coverImage;
+		}
 
+		public void setProduct_coverImage(String product_coverImage) {
+			this.product_coverImage = product_coverImage;
+		}
 
 		@Override
 		public String toString() {
@@ -146,8 +150,9 @@ public class Product {
 					+ product_nowfundprice + ", product_goalfundprice=" + product_goalfundprice + ", product_startdate="
 					+ product_startdate + ", product_goaldate=" + product_goaldate + ", product_hitcount="
 					+ product_hitcount + ", product_category=" + product_category + ", product_video=" + product_video
-					+ ", co_id=" + co_id + "]";
+					+ ", co_id=" + co_id + ", product_coverImage=" + product_coverImage + "]";
 		}
+		
 		
 		
 }

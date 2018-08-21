@@ -97,7 +97,8 @@ CREATE TABLE product
 	-- video path값
 	product_video varchar2(2000) NOT NULL,
 	-- 회사아이디
-	co_id varchar2(30) NOT NULL UNIQUE,
+	co_id varchar2(30) NOT NULL,
+	product_coverImage varchar2(2000) NOT NULL,
 	PRIMARY KEY (product_num)
 );
 

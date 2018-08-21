@@ -113,25 +113,25 @@
                             <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Projects <b class="caret"></b></a>
                             <ul class="dropdown-menu navbar-nav">
                                 <li>
-                                    <a href="AllProjects">All</a>
+                                    <a href="Projects?product_category=All">All</a>
                                 </li>
                                 <li>
-                                    <a href="MediaProjects">Media</a>
+                                    <a href="Projects?product_category=Media">Media</a>
                                 </li>
                                 <li>
-                                    <a href="index-3.html">Tech</a>
+                                    <a href="Projects?product_category=Tech">Tech</a>
                                 </li>
                                 <li>
-                                    <a href="index-4.html">Arts</a>
+                                    <a href="Projects?product_category=Arts">Arts</a>
                                 </li>
                                 <li>
-                                    <a href="index-5.html">Publishing</a>
+                                    <a href="Projects?product_category=Publishing">Publishing</a>
                                 </li>
                                 <li>
-                                    <a href="index-5.html">Foods</a>
+                                    <a href="Projects?product_category=Foods">Foods</a>
                                 </li>
                                 <li>
-                                    <a href="index-5.html">Fashion</a>
+                                    <a href="Projects?product_category=Fashion">Fashion</a>
                                 </li>
 
                             </ul>

@@ -10,13 +10,14 @@ public class WebMember {
 		private String phone;
 		private String email;
 		private String hobby;
+		private String image;
 
 		public WebMember() {
 			// TODO Auto-generated constructor stub
 		}
 
 		public WebMember(String userid, String username, String userpwd, String gender, String birthday, String address,
-				String phone, String email, String hobby) {
+				String phone, String email, String hobby, String image) {
 			super();
 			this.userid = userid;
 			this.username = username;
@@ -27,6 +28,7 @@ public class WebMember {
 			this.phone = phone;
 			this.email = email;
 			this.hobby = hobby;
+			this.image = image;
 		}
 
 		public String getUserid() {
@@ -101,11 +103,19 @@ public class WebMember {
 			this.hobby = hobby;
 		}
 
+		public String getImage() {
+			return image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
+		}
+
 		@Override
 		public String toString() {
-			return "Webmember [userid=" + userid + ", username=" + username + ", userpwd=" + userpwd + ", gender="
+			return "WebMember [userid=" + userid + ", username=" + username + ", userpwd=" + userpwd + ", gender="
 					+ gender + ", birthday=" + birthday + ", address=" + address + ", phone=" + phone + ", email="
-					+ email + ", hobby=" + hobby + "]";
+					+ email + ", hobby=" + hobby + ", image=" + image + "]";
 		}
 		
 		
